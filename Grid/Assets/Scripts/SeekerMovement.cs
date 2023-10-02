@@ -31,6 +31,7 @@ public class SeekerMovement : MonoBehaviour
             if (pathIndex < pathfinding.grid.path.Count)
             {
                 Node targetNode = pathfinding.grid.path[pathIndex];
+                seeker.GetComponent<Seeker>().Target = targetNode.worldPosition;
                 Vector2 targetPosition = targetNode.worldPosition;
 
                 Vector2 moveDir = (targetPosition - (Vector2)seeker.position).normalized;
